@@ -1,0 +1,286 @@
+$color_black: #333;
+
+
+
+/*------------------------------
+  Header
+------------------------------*/
+.nav-global {
+	background: #333;
+	ul {
+		ul {
+			background: #333;
+			a {
+				&:hover {
+					background: lighten(#333,10%);
+				}
+			}
+		}
+	}
+}
+.nav-header {
+	background: #567;
+	ul {
+		ul {
+			background: #567;
+			a {
+				&:hover {
+					background: lighten(#567,10%);
+				}
+			}
+		}
+	}
+}
+.nav-footer {
+	background: #333;
+	ul {
+		ul {
+			background: #333;
+			a {
+				&:hover {
+					background: lighten(#567,10%);
+				}
+			}
+		}
+	}
+}
+
+/************************************************************/
+/************************************************************/
+/************************************************************/
+
+/*------------------------------
+  Parts
+------------------------------*/
+
+input[type="submit"] {
+	background: #2ecc71;
+	color: #fff;
+	box-shadow: none;
+	border: none;
+	padding: 1em 1.4em;
+	&:hover {
+		box-shadow: none;
+		border: none;
+		background: lighten(#2ecc71,15%);
+	}
+}
+
+/*------------------------------
+  Header
+------------------------------*/
+#site-primary-navigation {
+	background: $color_black;
+	ul {
+		li {
+			a {
+				display: block;
+				padding: 0.6rem 1rem;
+				color: #fff;
+				&:hover {
+					background: lighten($color_black,10%);
+				}
+			}
+		}
+	}
+}
+
+.site-branding {
+	a,
+	a:hover,
+	a:visited,
+	a:focus,
+	a:active {
+		color: $color_black;
+		text-decoration: none;
+	}
+	.site-title,
+	.site-description {
+		margin: 0;
+		text-align: center;
+	}
+	.site-title {
+		@include font-size(2.4);
+		padding: 1.8rem 0 0.3rem;
+		clear: both;
+	}
+	.site-description {
+		@include font-size(1);
+		padding: 0.3rem 0 1.8rem;
+	}
+}
+
+#site-header-navigation {
+	display: block;
+	background: #567;
+	padding-top: 0.3rem;
+	padding-bottom: 0.3rem;
+	ul {
+		display: block;
+		li {
+			width: 100%;
+			&:not(:first-child) {
+				border-top: 1px solid lighten(#567,30%);
+			}
+			a {
+				padding: 0.6rem 1rem;
+				color: #fff;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 37.5em) {
+	#site-header-navigation {
+		ul {
+			@include display-flex;
+			li {
+				border-right: 1px solid #fff;
+				width: inherit;
+				&:first-child {
+					border-left: 1px solid #fff;
+				}
+				&:not(:first-child) {
+					border-top: none;
+				}
+				a {
+					display: block;
+					padding: 0.6rem 1rem;
+					color: #fff;
+					&:hover {
+						background: rgba(255,255,255,.15);
+					}
+				}
+			}
+		}
+	}
+}
+
+/*------------------------------
+  Main Area
+------------------------------*/
+
+
+/*------------------------------
+  Widget
+------------------------------*/
+.widget {
+	margin: 0 0 3.2rem;
+	
+	.widget-title {
+		border-bottom: 3px solid $color_black;
+		margin: 0;
+	}
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		li {
+			border-bottom: 1px dashed $color_black;
+			padding: 0.6rem 0;
+			a {
+				color: $color_black;
+				text-decoration: none;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
+
+/*------------------------------
+  Footer
+------------------------------*/
+.site-footer {
+	.widget {
+		.widget-title {
+			color: #fff;
+			border-bottom-color: #fff;
+		}
+		ul {
+			li {
+				color: #fff;
+				border-bottom-color: #fff;
+				a {
+					color: #fff;
+				}
+			}
+		}
+	}
+}
+	.footer-content {
+		padding-top: 3.2rem;
+	}
+	.site-info {
+		background: #333;
+		color: #999;
+		padding: 0.6rem 0;
+		text-align: center;
+		a,
+		a:hover,
+		a:visited,
+		a:focus,
+		a:active {
+			color: #999;
+			text-decoration: none;
+		}
+	}
+}
+
+/*------------------------------
+  Article
+------------------------------*/
+
+.hentry {
+	border: 1px solid #999;
+	padding: 1.2rem;
+	a {
+		text-decoration: underline;
+		color: #1133ff;
+	}
+	table {
+		th,
+		td {
+			padding: 0.6rem;
+		}
+	}
+}
+.cat-links {
+	background: #b7b8b9;
+	padding: 0.3rem 0.5rem;
+	border-radius: 4px;
+	a,
+	a:visited,
+	a:active,
+	a:focus {
+		color: #fff;
+		text-decoration: none;
+		&:hover {
+			color: #eee;
+		}
+	}
+}
+.tags-links {
+	a,
+	a:visited,
+	a:active,
+	a:focus {
+		display: inline-block;
+		padding: 0.3rem 0.5rem;
+		border-radius: 4px;
+		background: #e74c3c;
+		color: #fff;
+	}
+}
+
+/*------------------------------
+  Widget Parts
+------------------------------*/
+
+.widget {
+	.post-date {
+		color: #aaa;
+		font-size: 0.8em;
+	}
+}

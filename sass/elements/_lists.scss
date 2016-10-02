@@ -1,0 +1,27 @@
+ul,
+ol {
+	margin: 0 0 $size__margin-default $size__margin-default;
+	padding-left: 0;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: $size__margin-default;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 $size__margin-default $size__margin-default;
+}

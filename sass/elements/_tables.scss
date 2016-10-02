@@ -1,0 +1,13 @@
+table {
+	margin: 0 0 $size__margin-default;
+	width: 100%;
+	max-width: 100%;
+	th,
+	td {
+		border: 1px solid #999;
+		vertical-align: top;
+	}
+	th {
+		background: #ccc;
+	}
+}

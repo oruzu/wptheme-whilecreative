@@ -1,0 +1,754 @@
+@charset "UTF-8";
+@import "compass";
+
+/*
+Theme Name: While Creative
+Theme URI: http://while-creation.com
+Author: S.Shimoyama
+Author URI: http://while-creation.com
+Description: While Creative
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: whilecreative
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+While Creative is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+*/
+
+/*------------------------------------------------------------------------------------
+  0. Const
+------------------------------------------------------------------------------------*/
+$color_white: #fff;
+$color_black: #333;
+$margin_default: 1.6em;
+$width_sidebar: 300px;
+$width_sidebar_space: 20px;
+$responsive_width_sm: 768px;
+$responsive_width_sm_container: 720px;
+$responsive_width_lg: 1024px;
+$responsive_width_lg_container: 980px;
+
+/*------------------------------------------------------------------------------------
+  1. Reset
+------------------------------------------------------------------------------------*/
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+[hidden],
+template {
+  display: none;
+}
+
+a {
+  background-color: transparent;
+}
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+dfn {
+  font-style: italic;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+img {
+  border: 0;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+figure {
+  margin: 1em 40px;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+}
+
+pre {
+  overflow: auto;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+button {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+input {
+  line-height: normal;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+  border: 0;
+  padding: 0;
+}
+
+textarea {
+  overflow: auto;
+}
+
+optgroup {
+  font-weight: bold;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+/*------------------------------------------------------------------------------------
+  2. Typegraphy
+------------------------------------------------------------------------------------*/
+
+body,
+button,
+input,
+select,
+textarea {
+  color: #333;
+  font-family: "游ゴシック", YuGothic, "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "ＭＳ ゴシック", sans-serif;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  clear: both;
+}
+
+p {
+  margin-top: $margin_default;
+}
+
+dfn, cite, em, i {
+  font-style: italic;
+}
+
+blockquote {
+  margin: 0 $margin_default;
+}
+
+address {
+  margin: 0 0 $margin_default;
+}
+
+pre {
+  background: #eee;
+  font-family: "Courier 10 Pitch", Courier, monospace;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin-bottom: 1.6em;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1.6em;
+}
+
+code, kbd, tt, var {
+  font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+  font-size: 15px;
+  font-size: 0.9375rem;
+}
+
+abbr, acronym {
+  border-bottom: 1px dotted #666;
+  cursor: help;
+}
+
+mark, ins {
+  background: #fff9c0;
+  text-decoration: none;
+}
+
+big {
+  font-size: 125%;
+}
+
+/*------------------------------------------------------------------------------------
+  3. Elements
+------------------------------------------------------------------------------------*/
+
+html {
+  @include box-sizing(border-box);
+}
+
+*,
+*:before,
+*:after {
+  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+  box-sizing: inherit;
+}
+
+body {
+  background: $color_white;
+  /* Fallback for when there is no custom background color defined. */
+}
+
+blockquote, q {
+  quotes: "" "";
+  &:before,
+  &:after {
+    content: "";
+  }
+}
+
+hr {
+  background-color: #ccc;
+  border: 0;
+  height: 1px;
+  margin-top: $margin_default;
+}
+
+ul,
+ol {
+  margin: 0 0 $margin_default 0;
+}
+
+ul {
+  list-style: disc;
+}
+
+ol {
+  list-style: decimal;
+}
+
+li > ul,
+li > ol {
+  margin-bottom: 0;
+  margin-left: $margin_default;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin: 0 $margin_default $margin_default;
+}
+
+img {
+  height: auto;
+  /* Make sure images are scaled correctly. */
+  max-width: 100%;
+  /* Adhere to container width. */
+}
+
+table {
+  margin: 0 0 $margin_default;
+  width: 100%;
+  max-width: 100%;
+}
+
+/*------------------------------------------------------------------------------------
+  4. Forms
+------------------------------------------------------------------------------------*/
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  border: 1px solid;
+  border-color: #ccc #ccc #bbb;
+  border-radius: 3px;
+  background: #e6e6e6;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 12px;
+  font-size: 0.75rem;
+  line-height: 1;
+  padding: .6em 1em .4em;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+  border-color: #ccc #bbb #aaa;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
+}
+button:active, button:focus,
+input[type="button"]:active,
+input[type="button"]:focus,
+input[type="reset"]:active,
+input[type="reset"]:focus,
+input[type="submit"]:active,
+input[type="submit"]:focus {
+  border-color: #aaa #bbb #bbb;
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.search-form input[type="search"] {
+  width: 74%;
+}
+.search-form input[type="submit"] {
+  border: none;
+  box-shadow: none;
+  text-shadow: none;
+  padding: .9em 1em .7em;
+  background: #999;
+  color: #fff;
+}
+.search-form input[type="submit"]:hover, .search-form input[type="submit"]:active, .search-form input[type="submit"]:focus {
+  border: none;
+  box-shadow: none;
+  text-shadow: none;
+  background: #777;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+  color: #666;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+  color: #111;
+}
+
+select {
+  border: 1px solid #ccc;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"] {
+  padding: 3px;
+}
+
+textarea {
+  padding-left: 3px;
+  width: 100%;
+}
+
+/*------------------------------------------------------------------------------------
+  5. Navigation
+------------------------------------------------------------------------------------*/
+
+/**
+ Links
+*/
+a {
+	color: #006699;
+	&:hover {
+		cursor: pointer;
+		text-decoration: underline;
+	}
+	&:hover,
+	&:active {
+		outline: 0;
+	}
+	&:focus {
+		outline: thin dotted;
+	}
+}
+
+/**
+ Menus
+*/
+.menu-toggle
+.main-navigation.toggled ul {
+	display: block;
+}
+
+.nav {
+	clear: both;
+	display: block;
+	float: left;
+	width: 100%;
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		li {
+			float: left;
+			position: relative;
+			&:hover >ul,
+			&:focus > ul {
+				left: auto;
+			}
+		}
+		ul {
+			float: left;
+			position: absolute;
+			top: 2.7em;
+			left: -999em;
+			z-index: 99999;
+			ul {
+				left: -999em;
+				top: 0;
+			}
+			li {
+				&:hover > ul,
+				&:focus > ul {
+					left: 100%;
+				}
+			}
+		}
+	}
+	
+	a {
+		display: block;
+		text-decoration: none;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	
+	li {
+		float: left;
+		position: relative;
+	}
+}
+
+.nav-global {
+	background: #333;
+	ul {
+		display: none;
+		ul {
+			background: #555;
+			a {
+				width: 200px;
+				&:hover {
+					background: #777;
+				}
+			}
+		}
+	}
+	a {
+		color: #fff;
+		padding: 0.6rem 1rem;
+		&:hover {
+			background: #999;
+		}
+	}
+}
+
+
+.nav-header {
+	background: #567;
+	ul {
+		li {
+			width: 100%;
+		}
+	}
+	a {
+		color: #fff;
+		padding: 0.6rem 1rem;
+		&:hover {
+			background: lighten(#567,10%);
+		}
+	}
+	/*
+	ul {
+		ul {
+			background: #555;
+			a {
+				width: 200px;
+				&:hover {
+					background: #777;
+				}
+			}
+		}
+	}
+	a {
+		color: #fff;
+		padding: 0.6rem 1rem;
+		&:hover {
+			background: #999;
+		}
+	}
+	*/
+}
+
+.nav-footer {
+	
+}
+
+@media screen and (min-width: $responsive_width_sm) {
+	.menu-toggle {
+		display: none;
+	}
+	.nav-global {
+		ul {
+			display: block;
+		}
+	}
+	.nav-header {
+		ul {
+			li {
+				width: auto;
+			}
+		}
+	}
+}
+
+/*------------------------------------------------------------------------------------
+  XX. Layout
+------------------------------------------------------------------------------------*/
+@media screen and (min-width: $responsive_width_sm) {
+	.container {
+		width: $responsive_width_sm_container;
+		margin: 0 auto;
+	}
+	.content-area {
+		float: left;
+		margin: 0 (-$size__site-sidebar) 0 0;
+		width: 100%;
+		padding-bottom: ($margin_default * 2);
+	}
+	.site-main {
+		margin: 0 ($width_sidebar + $width_sidebar_space) 0 0;
+	}
+	.site-content .widget-area {
+		float: right;
+		overflow: hidden;
+		width: $width_sidebar;
+	}
+	.site-footer {
+		clear: both;
+		width: 100%;
+	}
+}
+@media screen and (min-width: $responsive_width_lg) {
+	.container {
+		width: $responsive_width_lg_container;
+		margin: 0 auto;
+	}
+}
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+  content: "";
+  display: table;
+  table-layout: fixed;
+}
+
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+  clear: both;
+}
+
+/*------------------------------------------------------------------------------------
+  XX. Content
+------------------------------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------------------------------
+  XX. Widgets
+------------------------------------------------------------------------------------*/
+.widget {
+  margin: $margin_default;
+}
+

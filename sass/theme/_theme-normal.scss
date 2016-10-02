@@ -1,0 +1,56 @@
+/*------------------------------
+  Header
+------------------------------*/
+$color_black: #333;
+
+
+
+/*------------------------------
+  Header
+------------------------------*/
+.nav-global {
+	background: #333;
+	ul {
+		ul {
+			background: #333;
+			a:hover {
+				background: lighten(#333,10%);
+			}
+		}
+	}
+}
+.nav-header {
+	background: #567;
+	ul {
+		ul {
+			background: #567;
+			a:hover {
+				background: lighten(#567,10%);
+			}
+		}
+	}
+}
+.nav-footer {
+	background: #555;
+	ul {
+		ul {
+			background: #555;
+			a:hover {
+				background: lighten(#555,10%);
+			}
+		}
+	}
+}
+
+/*------------------------------
+  Footer
+------------------------------*/
+.footer-area {
+	background: #999;
+}
+.footer-nav {
+	background: #555;
+}
+.footer-copyright {
+	background: #555;
+}
