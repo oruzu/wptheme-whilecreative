@@ -20,6 +20,12 @@ function whilecreative_setup() {
 	
 	// 1.2.1. <head> tag
 	add_theme_support( 'title-tag' );
+	remove_action('wp_head', 'wp_generator');
+	remove_action('wp_head', 'rsd_link');
+	remove_action('wp_head', 'wlwmanifest_link');
+	remove_action('wp_head', 'parent_post_rel_link', 10, 0);
+	remove_action('wp_head', 'start_post_rel_link', 10, 0);
+	remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
 	
 	add_theme_support( 'automatic-feed-links' );
 	
@@ -141,8 +147,8 @@ function whilecreative_widgets_init() {
 	) );
 	
 	register_sidebar( array(
-		'name'          => __( 'Footer Left', 'whilecreative' ),
-		'id'            => 'footer-left',
+		'name'          => __( 'Footer 1', 'whilecreative' ),
+		'id'            => 'footer-1',
 		'description'   => '',
 		'class'         => '',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -152,8 +158,8 @@ function whilecreative_widgets_init() {
 	) );
 	
 	register_sidebar( array(
-		'name'          => __( 'Footer Center', 'whilecreative' ),
-		'id'            => 'footer-center',
+		'name'          => __( 'Footer 2', 'whilecreative' ),
+		'id'            => 'footer-2',
 		'description'   => '',
 		'class'         => '',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -163,8 +169,8 @@ function whilecreative_widgets_init() {
 	) );
 	
 	register_sidebar( array(
-		'name'          => __( 'Footer Right', 'whilecreative' ),
-		'id'            => 'footer-right',
+		'name'          => __( 'Footer 3', 'whilecreative' ),
+		'id'            => 'footer-3',
 		'description'   => '',
 		'class'         => '',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -178,7 +184,7 @@ add_action( 'widgets_init', 'whilecreative_widgets_init' );
 
 
 
-function get_childparent_uri( $path_relative = '' ) {
+function whilecreative_get_childparent_uri( $path_relative = '' ) {
 	if ( file_exists( get_stylesheet_directory() . $path_relative ) ) {
 		// 子テーマにファイルがあれば、子テーマのファイルURLを返す
 		return get_stylesheet_directory_uri() . $path_relative;
@@ -188,12 +194,66 @@ function get_childparent_uri( $path_relative = '' ) {
 	}
 }
 
-function get_the_category_link() {
+function whilecreative_get_the_category_link() {
 	$cat = get_the_category();
 	return get_category_link( $cat[0]->cat_ID );
 }
 
-function get_the_tag_link() {
+function whilecreative_get_the_tag_link() {
 	$tag = get_the_tags();	
 	return get_tag_link( $tag[0]->term_id );
+}
+
+function whilecreative_archive_title() {
+	echo whilecreative_get_archive_title();
+}
+function whilecreative_get_archive_title() {
+	//@開発中
+	
+	$archive_title = '';
+	
+	/*
+	if ( is_category() ) :
+		single_cat_title( 'カテゴリー：' );
+	
+	elseif ( is_tag() ) :
+		single_tag_title( 'タグ：' );
+		
+	endif;
+	*/
+	
+	if ( is_archive() ) {
+		if ( is_category() ) {
+			$archive_title = sprintf( 'カテゴリー「%s」一覧', single_cat_title( '', false) );
+		} elseif ( is_tag() ) {
+			$archive_title = sprintf( 'タグ「%s」一覧', single_tag_title( '', false) );
+		} elseif ( is_author() ) {
+			$archive_title = sprintf( '著者「%s」一覧', get_the_author() );
+		} elseif ( is_day() ) {
+			$archive_title = sprintf( '「%s」一覧', get_the_time( 'Y年n月j日' ) );
+		} elseif ( is_month() ) {
+			$archive_title = sprintf( '「%s」一覧', get_the_time( 'Y年n月' ) );
+		} elseif ( is_year() ) {
+			$archive_title = sprintf( '「%s」一覧', get_the_time( 'Y年' ) );
+		} else {
+			$archive_title = '記事一覧';
+		}
+	} elseif ( is_search() ) {
+		$archive_title = sprintf( '「%s」の検索結果', get_search_query() );
+	}
+	
+	if ( ( get_query_var( 'paged' ) > 1 ) ) {
+		return $archive_title . '(' . whilecreative_show_page_number() . ')';
+	} else {
+		return $archive_title;
+	}
+}
+
+function whilecreative_show_page_number() {  
+    global $wp_query;  
+  
+    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;  
+    $max_page = $wp_query->max_num_pages;  
+  
+    echo $paged.' / '.$max_page;
 }

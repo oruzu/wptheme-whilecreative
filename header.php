@@ -24,8 +24,8 @@
 <?php get_template_part( 'header', 'ogp' ); ?>
 
 <link rel="canonical" href="<?php echo home_url(); ?>">
-<link rel="icon" href="<?php echo get_childparent_uri(); ?>/images/favicon.ico">
-<link rel="apple-touch-icon-precomposed apple-touch-icon" href="<?php echo get_childparent_uri(); ?>/images/apple-touch-icon-precomposed.png">
+<link rel="icon" href="<?php echo whilecreative_get_childparent_uri(); ?>/images/favicon.ico">
+<link rel="apple-touch-icon-precomposed apple-touch-icon" href="<?php echo whilecreative_get_childparent_uri(); ?>/images/apple-touch-icon-precomposed.png">
 <!--<link rel="alternate" type="application/rss+xml" href="<?php bloginfo( 'rss2_url' ); ?>">-->
 <!--<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">-->
 <!--<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" media="screen"> -->

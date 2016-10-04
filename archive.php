@@ -4,14 +4,12 @@
 		<main id="main" class="site-main" role="main">
 
 			<?php if ( have_posts() ) : ?>
-				
-				<?php if ( is_search() ) : ?>
+	
 				<header>
 					<h1 class="page-title">
 						<?php whilecreative_archive_title(); ?>
 					</h1>
 				</header>
-				<?php endif; ?>
 				
 				<?php while ( have_posts() ) : the_post(); ?>
 					

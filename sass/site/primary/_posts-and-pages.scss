@@ -82,7 +82,9 @@
 
 @media screen and (min-width: $responsive-sm__switch) {
 	.hentry {
-		margin: 0 0 $size__margin-default;
+		&:not(:first-child) {
+			margin: $size__margin-default 0 0;
+		}
 	}
 }
 

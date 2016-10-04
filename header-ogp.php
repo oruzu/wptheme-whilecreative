@@ -4,9 +4,9 @@ if ( is_home() || is_front_page() ) { // HOMEページ or フロントページ
 } elseif ( is_single() || is_page() ) { // 投稿 or 固定ページ
 	$url = get_permalink();
 } elseif ( is_category() ) { // カテゴリページ
-	$url = get_the_category_link();
+	$url = whilecreative_get_the_category_link();
 } elseif ( is_tag() ) { // タグページ
-	$url = get_the_tag_link();
+	$url = whilecreative_get_the_tag_link();
 /*
 } elseif ( is_post_type_archive() ) { // カスタム投稿一覧ページ
 
@@ -31,15 +31,15 @@ if ( is_home() || is_front_page() ) { // HOMEページ or フロントページ
 <meta property="og:description" content="<?php bloginfo( 'description' ); ?>">
 <meta property="og:title" content="<?php bloginfo( 'name' ); ?>">
 <meta property="og:url" content="<?php echo $url; ?>">
-<meta property="og:image" content="<?php echo get_childparent_uri() . '/images/default_thumbnail.png'; ?>">
+<meta property="og:image" content="<?php echo whilecreative_get_childparent_uri() . '/images/default_thumbnail.png'; ?>">
 <?php else : ?>
 <meta property="og:description" content="<?php the_excerpt(); ?>">
 <meta property="og:title" content="<?php the_title(); ?>">
 <meta property="og:url" content="<?php echo $url; ?>">
 <?php if ( has_post_thumbnail() ) : ?>
-<meta property="og:image" content="<?php echo get_the_post_thumbnail_url(); ?>">
+<meta property="og:image" content="<?php echo whilecreative_get_the_post_thumbnail_url(); ?>">
 <?php else : ?>
-<meta property="og:image" content="<?php echo get_childparent_uri() . '/images/default_thumbnail.png'; ?>">
+<meta property="og:image" content="<?php echo whilecreative_get_childparent_uri() . '/images/default_thumbnail.png'; ?>">
 <?php endif; ?>
 <?php endif; ?>
 

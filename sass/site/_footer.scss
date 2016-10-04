@@ -1,6 +1,31 @@
+.footer-area {
+	padding: 0.6rem;
+}
+@media screen and (min-width: $responsive-sm__switch) {
+	.footer-area {
+		padding: 0 0 $size__margin-default;
+	
+		.widget-area {
+			@include display-flex;
+			@include justify-content(space-between);
+		}
+		.widget {
+			@include flex(0 1 230px);
+		}
+	}
+}
+@media screen and (min-width: $responsive-lg__switch) {
+	.footer-area {
+		.widget {
+			@include flex(0 1 310px);
+		}
+	}
+}
+
 .nav-footer {
 	padding: 1.2rem 0;
 }
+
 .footer-copyright {
 	padding: 0.3rem 0;
 	font-size: 0.9em;

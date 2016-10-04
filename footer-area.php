@@ -1,9 +1,27 @@
 <footer id="footer" class="site-footer">
+	<?php
+	if ( is_active_sidebar( 'footer-1' ) ||
+	     is_active_sidebar( 'footer-2' ) ||
+	     is_active_sidebar( 'footer-3' ) ) :
+	?>
 	<div class="footer-area">
 		<div class="container">
-			<div style="padding: 1.8em 0; text-align: center; font-size: 3.6rem;  color: #555;">.footer-main</div>
+			<div class="widget-area">
+				<?php
+				for ( $i = 1; $i <= 3; $i++ ) :
+					if ( is_active_sidebar( 'footer-'.$i ) ) :
+				?>
+				<?php dynamic_sidebar( 'footer-'.$i ); ?>
+				<?php
+					endif;
+				endfor;
+				?>
+			</div>
 		</div>
 	</div>
+	<?php
+	endif;
+	?>
 	
 	<?php if ( has_nav_menu( 'footer' ) ) : ?>
 	<nav class="nav nav-footer">

@@ -5,21 +5,11 @@
 
 			<?php if ( have_posts() ) : ?>
 				
-				<?php if ( is_search() ) : ?>
-				<header>
-					<h1 class="page-title">
-						<?php whilecreative_archive_title(); ?>
-					</h1>
-				</header>
-				<?php endif; ?>
-				
 				<?php while ( have_posts() ) : the_post(); ?>
 					
-					<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
+					<?php get_template_part( 'template-parts/content', 'page' ); ?>
 	
 				<?php endwhile; ?>
-	
-				<?php the_posts_pagination(); ?>
 			
 			<?php else : ?>
 	
