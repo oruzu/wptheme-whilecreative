@@ -11,7 +11,7 @@
 	<div class="header-branding">
 		<div class="container">
 			<a href="<?php echo home_url(); ?>">
-				<div style="padding: 1.2em 0; text-align: center; font-size: 3.6rem; color: #555;">.header-branding</div>
+				<div style="padding: 1.2em 0; text-align: center; font-size: 3.6rem; color: #555;"><?php bloginfo('name'); ?></div>
 			</a>
 		</div>
 	</div>
