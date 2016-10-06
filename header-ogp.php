@@ -37,7 +37,7 @@ if ( is_home() || is_front_page() ) { // HOMEページ or フロントページ
 <meta property="og:title" content="<?php the_title(); ?>">
 <meta property="og:url" content="<?php echo $url; ?>">
 <?php if ( has_post_thumbnail() ) : ?>
-<meta property="og:image" content="<?php echo whilecreative_get_the_post_thumbnail_url(); ?>">
+<meta property="og:image" content="<?php echo get_the_post_thumbnail_url(); ?>">
 <?php else : ?>
 <meta property="og:image" content="<?php echo whilecreative_get_childparent_uri() . '/images/default_thumbnail.png'; ?>">
 <?php endif; ?>
