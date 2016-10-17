@@ -759,20 +759,16 @@ a:hover, a:active {
 }
 
 .hentry a {
-  color: #333;
-  text-decoration: none;
+  color: #006699;
 }
 .hentry a:visited {
-  color: #333;
-}
-.hentry a:focus {
-  color: #333;
+  color: #006699;
 }
 .hentry a:hover {
-  color: #333;
+  color: #006699;
 }
 .hentry a:active {
-  color: #333;
+  color: #006699;
 }
 
 /* meta */

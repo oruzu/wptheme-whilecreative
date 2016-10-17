@@ -10,8 +10,9 @@
 }
 
 .hentry a {
-	@include link-colors($color__text-screen,$color__text-screen,$color__text-screen,$color__text-screen,$color__text-screen);
-	text-decoration: none;
+	//@include link-colors($color__text-screen,$color__text-screen,$color__text-screen,$color__text-screen,$color__text-screen);
+	//text-decoration: none;
+	@include link-colors($color__link,$color__link,$color__link,$color__link);
 }
 
 /* meta */
