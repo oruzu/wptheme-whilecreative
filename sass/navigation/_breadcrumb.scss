@@ -1,0 +1,24 @@
+.breadcrumb-area {
+	background: #fcfcfc;
+	font-size: 0.9em;
+
+	.breadcrumb-list-wrapper {
+		padding-top: 0.6rem;
+		padding-bottom: 0.6rem;
+	}
+	.breadcrumb-list {
+		margin: 0;
+		list-style-type: none;
+	}
+	.breadcrumb-item {
+		display: inline-block;
+		color: #777;
+		a {
+			color: #777;
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
