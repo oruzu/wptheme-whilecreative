@@ -48,6 +48,23 @@
 	}
 }
 
+@media screen and (min-width: $responsive-xlg__switch) {
+	.container {
+		width: $responsive-xlg__container;
+	}
+	.content-area {
+		margin-right: (-$responsive-xlg__sidebar);
+	}
+	
+	.site-main {
+		margin-right: $responsive-xlg__addmargin;
+	}
+	
+	.site-content .widget-area {
+		width: $responsive-xlg__sidebar;
+	}
+}
+
 /**
  Page Template (one-column)
  */

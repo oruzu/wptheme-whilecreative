@@ -6,7 +6,6 @@
 .hentry {
 	margin-bottom: $size__margin-default;
 	padding-bottom: $size__margin-default;
-	border-bottom: 1px solid #ccc;
 }
 
 .hentry a {
@@ -16,9 +15,46 @@
 }
 
 /* meta */
+/*
 .byline,
 .updated:not(.published){
 	display: none;
+}
+*/
+.entry-meta {
+	background: #eee;
+	border-radius: 6px;
+	padding: 0.3rem 1.2rem;
+}
+.entry-category {
+	.cat {
+		display: inline-block;
+		text-decoration: none;
+		color: #fff;
+		background: complement(#567);
+		padding: 0.3rem 0.8rem;
+		font-size: 0.9em;
+	}
+}
+.entry-meta-label,
+.entry-date,
+.author {
+	margin-right: 8px;
+}
+.entry-meta-label {
+	display: inline-block!important;
+	background: #ccc;
+	color: #fff;
+	font-size: 0.9em;
+	padding: 0.1rem 0.4rem;
+}
+.posted-on a,
+.author a {
+	color: #555!important;
+	text-decoration: none!important;
+	&:hover {
+		text-decoration: underline!important;
+	}
 }
 
 .single .byline,
@@ -33,6 +69,7 @@
 /* title */
 .entry-title {
 	margin-top: 0;
+	padding: 0.6rem 0;
 }
 .entry-title a {
 	@include link-colors($color__link,$color__link,$color__link,$color__link);

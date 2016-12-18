@@ -4,3 +4,58 @@
 .bypostauthor {
 	display: block;
 }
+
+.comments-title {
+	border-top: 1px solid #ccc;
+	padding-top: 0.6rem;
+}
+.comment-list {
+	margin-top: 0;
+	.comment {
+		padding: 1.2rem 0;
+		list-style-type: none;
+		&:not(:first-child) {
+			border-top: 1px dashed #ccc;
+		}
+		
+		.reply {
+			margin-top: 0.6rem;
+		}
+		.comment-reply-link {
+			border: 1px solid #999;
+			border-radius: 4px;
+			padding: 0.4rem 1.2rem;
+			font-size: 0.8em;
+			text-decoration: none;
+			color: #555;
+			&:hover {
+				background: #ccc;
+				color: #555;
+			}
+		}
+	}
+}
+.comment-respond {
+	background: #f0f0f0;
+	padding: 1.2rem;
+	border-radius: 6px;
+	margin-top: 1.2rem;
+	.comment-reply-title {
+		margin-top: 0;
+		border-bottom: 1px solid #ccc;
+		padding-bottom: 0.6rem;
+	}
+	
+	.form-submit {
+		margin-top: 0.6rem;
+	}
+	input[type="submit"] {
+		text-shadow: none;
+		box-shadow: none;
+		border: none;
+		background: #777;
+		color: #fff;
+		padding: 0.6rem;
+		font-size: 1.1em;
+	}
+}

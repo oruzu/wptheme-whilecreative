@@ -383,6 +383,7 @@ ol {
 
 li > ul,
 li > ol {
+  margin-top: 0;
   margin-bottom: 0;
   margin-left: 1.6em;
 }
@@ -404,6 +405,7 @@ table th,
 table td {
   border: 1px solid #999;
   vertical-align: top;
+  padding: 0.2em;
 }
 table th {
   background: #ccc;
@@ -724,6 +726,33 @@ a:hover, a:active {
 }
 
 /*--------------------------------------------------------------
+## BreadCrumb
+--------------------------------------------------------------*/
+.breadcrumb-area {
+  background: #fcfcfc;
+  font-size: 0.9em;
+}
+.breadcrumb-area .breadcrumb-list-wrapper {
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+}
+.breadcrumb-area .breadcrumb-list {
+  margin: 0;
+  list-style-type: none;
+}
+.breadcrumb-area .breadcrumb-item {
+  display: inline-block;
+  color: #777;
+}
+.breadcrumb-area .breadcrumb-item a {
+  color: #777;
+  text-decoration: none;
+}
+.breadcrumb-area .breadcrumb-item a:hover {
+  text-decoration: underline;
+}
+
+/*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
 .site-content {
@@ -755,7 +784,6 @@ a:hover, a:active {
 .hentry {
   margin-bottom: 1.6em;
   padding-bottom: 1.6em;
-  border-bottom: 1px solid #ccc;
 }
 
 .hentry a {
@@ -772,9 +800,49 @@ a:hover, a:active {
 }
 
 /* meta */
+/*
 .byline,
-.updated:not(.published) {
-  display: none;
+.updated:not(.published){
+	display: none;
+}
+*/
+.entry-meta {
+  background: #eee;
+  border-radius: 6px;
+  padding: 0.3rem 1.2rem;
+}
+
+.entry-category .cat {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  background: #776655;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.9em;
+}
+
+.entry-meta-label,
+.entry-date,
+.author {
+  margin-right: 8px;
+}
+
+.entry-meta-label {
+  display: inline-block !important;
+  background: #ccc;
+  color: #fff;
+  font-size: 0.9em;
+  padding: 0.1rem 0.4rem;
+}
+
+.posted-on a,
+.author a {
+  color: #555 !important;
+  text-decoration: none !important;
+}
+.posted-on a:hover,
+.author a:hover {
+  text-decoration: underline !important;
 }
 
 .single .byline,
@@ -799,6 +867,7 @@ a:hover, a:active {
 /* title */
 .entry-title {
   margin-top: 0;
+  padding: 0.6rem 0;
 }
 
 .entry-title a {
@@ -899,6 +968,61 @@ a:hover, a:active {
   display: block;
 }
 
+.comments-title {
+  border-top: 1px solid #ccc;
+  padding-top: 0.6rem;
+}
+
+.comment-list {
+  margin-top: 0;
+}
+.comment-list .comment {
+  padding: 1.2rem 0;
+  list-style-type: none;
+}
+.comment-list .comment:not(:first-child) {
+  border-top: 1px dashed #ccc;
+}
+.comment-list .comment .reply {
+  margin-top: 0.6rem;
+}
+.comment-list .comment .comment-reply-link {
+  border: 1px solid #999;
+  border-radius: 4px;
+  padding: 0.4rem 1.2rem;
+  font-size: 0.8em;
+  text-decoration: none;
+  color: #555;
+}
+.comment-list .comment .comment-reply-link:hover {
+  background: #ccc;
+  color: #555;
+}
+
+.comment-respond {
+  background: #f0f0f0;
+  padding: 1.2rem;
+  border-radius: 6px;
+  margin-top: 1.2rem;
+}
+.comment-respond .comment-reply-title {
+  margin-top: 0;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.6rem;
+}
+.comment-respond .form-submit {
+  margin-top: 0.6rem;
+}
+.comment-respond input[type="submit"] {
+  text-shadow: none;
+  box-shadow: none;
+  border: none;
+  background: #777;
+  color: #fff;
+  padding: 0.6rem;
+  font-size: 1.1em;
+}
+
 /*--------------------------------------------------------------
 ## Footer
 --------------------------------------------------------------*/
@@ -966,7 +1090,7 @@ a:hover, a:active {
 
 @media screen and (min-width: 768px) {
   .container {
-    width: 720px;
+    width: 768px;
     margin: 0 auto;
   }
 
@@ -1007,6 +1131,23 @@ a:hover, a:active {
 
   .site-content .widget-area {
     width: 300px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1180px;
+  }
+
+  .content-area {
+    margin-right: -330px;
+  }
+
+  .site-main {
+    margin-right: 360px;
+  }
+
+  .site-content .widget-area {
+    width: 330px;
   }
 }
 /**

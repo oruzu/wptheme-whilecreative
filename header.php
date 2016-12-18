@@ -40,5 +40,15 @@
 
 <?php get_template_part( 'header', 'area' ); ?>
 
+<?php if ( ! is_home() || ! is_front_page() ) : ?>
+	<div id="breadcrumb" class="breadcrumb-area">
+		<div class="container">
+			<div class="breadcrumb-list-wrapper">
+				<?php whilecreative_breadcrumb(); ?>
+			</div>
+		</div>
+	</div>
+<?php endif;?>
+
 	<div id="content" class="site-content">
 		<div class="container">

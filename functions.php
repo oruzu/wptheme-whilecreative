@@ -257,3 +257,29 @@ function whilecreative_show_page_number() {
   
     echo $paged.' / '.$max_page;
 }
+
+
+/**
+ * Implement the Custom Header feature.
+ */
+require get_template_directory() . '/inc/custom-header.php';
+
+/**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/template-tags.php';
+
+/**
+ * BreadCrumb List.
+ */
+require get_template_directory() . '/inc/breadcrumb.php';
+
+/**
+ * Custom functions that act independently of the theme templates.
+ */
+//require get_template_directory() . '/inc/extras.php';
+
+/**
+ * Customizer additions.
+ */
+//require get_template_directory() . '/inc/customizer.php';
