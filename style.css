@@ -55,6 +55,7 @@ html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
+  word-wrap: break-word;
 }
 
 body {
@@ -811,14 +812,28 @@ a:hover, a:active {
   border-radius: 6px;
   padding: 0.3rem 1.2rem;
 }
+.entry-meta a,
+.entry-meta a:active,
+.entry-meta a:hover,
+.entry-meta a:focus,
+.entry-meta a:visited {
+  text-decoration: none;
+  color: #999 !important;
+}
 
 .entry-category .cat {
   display: inline-block;
   text-decoration: none;
-  color: #fff;
-  background: #776655;
+  color: #555;
+  background: #f0f0f0;
   padding: 0.3rem 0.8rem;
   font-size: 0.9em;
+}
+.entry-category .cat:active, .entry-category .cat:hover, .entry-category .cat:focus, .entry-category .cat:visited {
+  color: #555;
+}
+.entry-category .cat:hover {
+  background: #c0c0c0;
 }
 
 .entry-meta-label,
@@ -829,9 +844,8 @@ a:hover, a:active {
 
 .entry-meta-label {
   display: inline-block !important;
-  background: #ccc;
-  color: #fff;
   font-size: 0.9em;
+  font-weight: bold;
   padding: 0.1rem 0.4rem;
 }
 
@@ -938,15 +952,57 @@ a:hover, a:active {
   box-shadow: none;
 }
 
-@media screen and (min-width: 768px) {
-  .hentry:not(:first-child) {
-    margin: 1.6em 0 0;
-  }
+/*
+@media screen and (min-width: $responsive-sm__switch) {
+	.hentry {
+		&:not(:first-child) {
+			margin: $size__margin-default 0 0;
+		}
+	}
 }
+*/
+body.home .hentry,
+body.archive .hentry {
+  padding: 1.6em 0;
+}
+body.home .hentry:not(:first-child),
+body.archive .hentry:not(:first-child) {
+  border-top: 1px solid #ccc;
+}
+body.home .hentry a,
+body.archive .hentry a {
+  color: #555 !important;
+  text-decoration: none !important;
+}
+body.home .hentry .entry-thumbnail img,
+body.archive .hentry .entry-thumbnail img {
+  width: 100%;
+}
+body.home .hentry .entry-date,
+body.archive .hentry .entry-date {
+  margin-left: 0.4em;
+}
+body.home .hentry .entry-title:hover,
+body.archive .hentry .entry-title:hover {
+  text-decoration: underline;
+}
+
 @media screen and (min-width: 768px) {
   body.home .hentry,
   body.archive .hentry {
-    padding: 0 0 1.6em;
+    display: -webkit-flex;
+    display: flex;
+  }
+  body.home .hentry .entry-thumbnail,
+  body.archive .hentry .entry-thumbnail {
+    -webkit-flex: 1;
+    flex: 1;
+    margin-right: 20px;
+  }
+  body.home .hentry .entry-main,
+  body.archive .hentry .entry-main {
+    -webkit-flex: 3;
+    flex: 3;
   }
 }
 /*--------------------------------------------------------------

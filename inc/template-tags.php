@@ -7,6 +7,80 @@
  * @package whilecreative
  */
 
+
+if ( ! function_exists( 'whilecreative_entry_byline' ) ) :
+function whilecreative_entry_byline( $show_label = true ) {
+	$byline = sprintf(
+		esc_html_x( '%s', 'post author', 'esc_html_x' ),
+		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+	);
+	
+	if ( $show_label ) {
+		echo '<span class="entry-meta-label byline">作成者：</span>' . $byline;
+	} else {
+		echo $byline;
+	}
+}
+endif;
+
+if ( ! function_exists( 'whilecreative_entry_date_published' ) ) :
+function whilecreative_entry_date_published( $show_label = true ) {
+	
+	if ( get_the_time( 'U' ) === get_the_modified_time( 'U' ) ) {
+		$time_string_published = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+	} else {
+		$time_string_published = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
+	}
+	
+	$time_string = sprintf( $time_string_published,
+		esc_attr( get_the_date( 'c' ) ),
+		esc_html( get_the_date() )
+	);
+
+	$published = sprintf(
+		esc_html_x( '%s', 'post date', 'whilecreative' ),
+		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+	);
+	
+	if ( $show_label ) {
+		echo '<span class="entry-meta-label published">投稿日：</span>' . $published;
+	} else {
+		echo $published;
+	}
+
+}
+endif;
+
+if ( ! function_exists( 'whilecreative_entry_date_updated' ) ) :
+function whilecreative_entry_date_updated( $show_label = true ) {
+	
+	if ( get_the_time( 'U' ) === get_the_modified_time( 'U' ) ) {
+		echo '';
+	} else {
+		$time_string_updated = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
+		$time_string = sprintf( $time_string_updated,
+			esc_attr( get_the_modified_date( 'c' ) ),
+			esc_html( get_the_modified_date() )
+		);
+		
+		$updated = sprintf(
+			esc_html_x( '%s', 'post date', 'whilecreative' ),
+			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>',
+			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+		);
+		
+		if ( $show_label ) {
+			echo '<span class="entry-meta-label published">更新日：</span>' . $updated;
+		} else {
+			echo $updated;
+		}
+	}
+
+}
+endif;
+
+
+
 if ( ! function_exists( 'whilecreative_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
@@ -70,7 +144,7 @@ if ( ! function_exists( 'whilecreative_entry_categories' ) ) :
 /**
  * 
  */
-function whilecreative_entry_categories() {
+function whilecreative_entry_category() {
 	$post_cats = get_the_category();
 	$post_cat = $post_cats[0];
 ?>
